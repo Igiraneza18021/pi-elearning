@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5; /* Background color for the whole page */
+}
+
+.bodd {
+    background-color: #150857; /* Dark blue background */
+    width: 100vw;              /* Full width */
+    height: 110vh;             /* Full height */
+    display: flex;             /* Flexbox for alignment */
+    justify-content: center;   /* Center horizontally */
+    align-items: center;       /* Center vertically */
+    padding: 20px;             /* Padding around the content */
+    box-sizing: border-box;
+    z-index: 1;    /* Include padding and borders in the size */
+}
+
+.content {
+    display: flex;             /* Flexbox for the content */
+    width: 100%;
+    max-width: 1200px;         /* Max width of the container */
+    background-color: white;   /* Background color for the content */
+    border-radius: 20px;       /* Rounded corners */
+    overflow: hidden;          /* Hide overflow content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.text-section {
+    padding: 40px;             /* Padding inside the text section */
+    color: white;              /* White text color */
+    background-color: #150857; /* Dark blue background */
+    flex: 1;                   /* Take up remaining space */
+}
+
+.text-section h1 {
+    font-size: 2em;            /* Large font size for the heading */
+    margin-bottom: 20px;       /* Space below the heading */
+}
+
+.text-section p {
+    font-size: 1em;            /* Normal font size for the paragraph */
+    margin-bottom: 20px;       /* Space below the paragraph */
+}
+
+.text-section .btn {
+    display: inline-block;     /* Inline-block for the button */
+    padding: 10px 20px;        /* Padding inside the button */
+    background-color: #5a5aff; /* Blue background color for the button */
+    color: white;              /* White text color */
+    text-decoration: none;     /* No underline for the link */
+    border-radius: 5px;        /* Rounded corners */
+}
+
+.image-section {
+    flex: 1;   
+    border-radius: 20px,0px,0px,0px;                /* Take up remaining space */
+}
+
+.image-section img {
+    width: 100%;               /* Full width of the image */
+    height: 100%;              /* Full height of the image */
+    object-fit: cover;  
+    z-index: 2;       /* Cover the area */
+    border-radius: 20px,0px,0px,0px;/* Rounded corners */
+}

@@ -1,8 +1,8 @@
 
-body, html {
+/* /body, html {
     height: 100%;
     color: black;
-  }
+  } */
   
   * {
     box-sizing: border-box;
@@ -171,7 +171,23 @@ border-radius: 2%;
 .imghome:hover::before {
   opacity: 0; 
 }
-
+.bodd {
+  opacity: 0.8;
+  background-color: #150857; 
+  width: 100vw;              
+  height: 900px;             
+  margin: 0;                  
+  padding: 0;                
+  box-sizing: border-box;     
+}
+.img{
+  position: relative;
+  left: 40%;
+  top: 30%;
+  width: 40vh;
+  height: 60vh;
+  size: 60;
+}
 
 
 

@@ -8,7 +8,7 @@ body {
 .bodd {
     background-color: #150857; /* Dark blue background */
     width: 100vw;              /* Full width */
-    height: 110vh;             /* Full height */
+    height: 145vh;             /* Full height */
     display: flex;             /* Flexbox for alignment */
     justify-content: center;   /* Center horizontally */
     align-items: center;       /* Center vertically */

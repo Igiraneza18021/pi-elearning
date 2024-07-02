@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign Up</title>
+    <link rel="stylesheet" href="forms.css">
+    <!-- Firebase SDK -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script> -->
+</head>
+<body background="pi3.jpg">
+    <div class="container">
+        <h1>Welcome!</h1>
+        <div class="forms">
+            <div class="login">
+                <h2>Login</h2>
+                <form id="sign-in-form">
+                    <label for="sign-in-email">Email:</label>
+                    <input type="email" id="sign-in-email" name="email" placeholder="Enter Email" required>
+                    <label for="sign-in-password">Password:</label>
+                    <input type="password" id="sign-in-password" name="password" placeholder="Enter Password" required>
+                    <button type="submit">Log In</button>
+                </form>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <div class="signup">
+                <h2>Sign Up</h2>
+                <form id="sign-up-form">
+                    <label for="sign-up-email">Email:</label>
+                    <input type="email" id="sign-up-email" name="email" placeholder="Enter Email" required>
+                    <label for="sign-up-password">Password:</label>
+                    <input type="password" id="sign-up-password" name="password" placeholder="Create Password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyAVYh9Wth0RhZ5oBDR6OZwdxSMIJrHtBUM",
+          authDomain: "authentication-3952e.firebaseapp.com",
+          databaseURL: "https://authentication-3952e-default-rtdb.firebaseio.com",
+          projectId: "authentication-3952e",
+          storageBucket: "authentication-3952e.appspot.com",
+          messagingSenderId: "40583062003",
+          appId: "1:40583062003:web:e1cf3152910c8190b73286"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth(app);
+
+
+sign-up-form.addEventListener('click',(e) => {
+
+    var email = document.getElementById('').value;
+    var password = document.getElementById('').value;
+    var username = document.getElementById('').value;
+
+    signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+})
+      </script>
+
+
+
+    <!-- Firebase Initialization and Authentication Logic -->
+    <!-- <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAVYh9Wth0RhZ5oBDR6OZwdxSMIJrHtBUM",
+            authDomain: "authentication-3952e.firebaseapp.com",
+            projectId: "authentication-3952e",
+            storageBucket: "authentication-3952e.appspot.com",
+            messagingSenderId: "40583062003",
+            appId: "1:40583062003:web:8b5e58a957acc6d3b73286"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Enhanced Sign-Up with Error Handling
+        document.getElementById('sign-up-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('sign-up-email').value;
+            const password = document.getElementById('sign-up-password').value;
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Signed up successfully
+                    console.log('Sign-Up Successful:', userCredential.user);
+                    alert('Sign-Up Successful! Welcome ' + userCredential.user.email);
+                })
+                .catch((error) => {
+                    // Handle sign-up errors
+                    console.error('Sign-Up Error:', error.message);
+                    alert('Error: ' + error.message);
+                });
+        });
+
+        // Enhanced Sign-In with Error Handling
+        document.getElementById('sign-in-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('sign-in-email').value;
+            const password = document.getElementById('sign-in-password').value;
+
+            auth.signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Signed in successfully
+                    console.log('Sign-In Successful:', userCredential.user);
+                    alert('Welcome back, ' + userCredential.user.email);
+                })
+                .catch((error) => {
+                    // Handle sign-in errors
+                    console.error('Sign-In Error:', error.message);
+                    alert('Error: ' + error.message);
+                });
+        });
+
+        // Monitor Auth State
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                // User is signed in.
+                console.log('User signed in:', user);
+                // Optional: Redirect or update UI
+                // window.location.href = 'dashboard.html'; // Example redirect
+            } else {
+                // No user is signed in.
+                console.log('No user signed in.');
+            }
+        });
+    </script> -->
+</body>
+</html>
